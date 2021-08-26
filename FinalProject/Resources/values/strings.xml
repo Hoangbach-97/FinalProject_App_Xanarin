@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Borrow FDevices</string>
+    <string name="action_settings">Settings</string>
+	<string name="welcome">Welcome</string>
+	<string name="Enter_acc">Enter your credentials to log in</string>
+	<string name="Enter_email">Enter your email</string>
+	<string name="Enter_pass">Enter your password</string>
+</resources>
