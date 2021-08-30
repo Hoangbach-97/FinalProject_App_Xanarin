@@ -28,23 +28,11 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginVertical="10dp"
          android:textSize="15sp"
         android:textColor="#fff"
         android:id="@+id/textViewCreate" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="40dp"
-        android:background="#F7F9FA"
-        android:inputType="text"
-        android:hint="Enter your name"
-        android:layout_marginHorizontal="20dp"
-        android:padding="10dp"
-        android:id="@+id/editTextName"
-        />
 
     <EditText
         android:layout_width="match_parent"
