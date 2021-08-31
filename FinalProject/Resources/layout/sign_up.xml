@@ -16,10 +16,11 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:textSize="25sp"
         android:textColor="#fff"
         android:id="@+id/textViewSignup" />
+   
 
     <TextView
         android:text="Enter the details below to create your account"
@@ -33,6 +34,16 @@
         android:textColor="#fff"
         android:id="@+id/textViewCreate" />
 
+     <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F7F9FA"
+        android:inputType="textEmailAddress" 
+        android:hint="Enter your name"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:padding="10dp"
+        android:id="@+id/editTextName" />
 
     <EditText
         android:layout_width="match_parent"
@@ -40,7 +51,7 @@
         android:background="#F7F9FA"
         android:inputType="textEmailAddress" 
         android:hint="Enter your email"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginHorizontal="20dp"
         android:padding="10dp"
         android:id="@+id/editTextEmail"
@@ -51,7 +62,7 @@
         android:background="#F7F9FA"
         android:inputType="textPassword" 
         android:hint="Enter  password"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginHorizontal="20dp"
         android:padding="10dp"
         android:id="@+id/editTextPass"
@@ -67,8 +78,32 @@
         android:id="@+id/editTextConfirmPass"
         />
         
+    
+       
+     <RadioGroup
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:layout_marginHorizontal="20dp"
+          android:layout_marginTop="13dp"
+          android:id="@+id/radioGroup1"
+          >
+      <RadioButton
+          android:id="@+id/radio_user"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text="USER"
+          android:checked="true"
+          android:textColor="#fff"
+          />
+      <RadioButton android:id="@+id/radio_admin"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text="ADMIN" 
+          android:textColor="#fff" />
+      </RadioGroup>
 
- 
+       
      <Button
         android:text="Sign up"
         android:layout_width="wrap_content"
@@ -77,6 +112,7 @@
         android:minWidth="250dp"
         android:layout_gravity="center"
         android:id="@+id/buttonSignup" />
+
     <TextView
         android:text="Already have an account? Log In"
         android:textAppearance="?android:attr/textAppearanceSmall"

@@ -19,11 +19,16 @@ namespace FinalProject
         [PrimaryKey, AutoIncrement, Column("Id")]
         public int id { get; set; }
 
+        [MaxLength(30)]
+        public string name { get; set; }
+
         [MaxLength(30), Unique]
         public string email { get; set; }
 
         [MaxLength(25)]
         public string password { get; set; }
 
+        [MaxLength(25), NotNull]
+        public string role { get; set; }
     }
 }

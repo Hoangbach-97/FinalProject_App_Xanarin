@@ -19,6 +19,13 @@ namespace FinalProject
     [Activity(Label = "Signup")]
     public class ActivitySignup : Activity
     {
+        //ROLES***************************************************
+
+
+        private RadioButton radioBtnAdmin;
+        private RadioButton radioBtnUser;
+
+
         private Button buttonSignup;
         private EditText editTextEmail;
         private EditText editTextPass;
@@ -45,6 +52,13 @@ namespace FinalProject
             buttonSignup = FindViewById<Button>(Resource.Id.buttonSignup);
             buttonSignup.Click += ButtonSignup_Click;
 
+
+            //ROLES***************************************************
+
+            radioBtnAdmin = FindViewById<RadioButton>(Resource.Id.radio_admin);
+            radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
+            radioBtnAdmin.Click += RadioButton_Click;
+            radioBtnUser.Click += RadioButton_Click;
         }
 
         //Chưa xử lý ràng buộc dữ liệu nhập vào
@@ -53,6 +67,8 @@ namespace FinalProject
             string inputEmail = editTextEmail.Text.ToString();
             string inputPass = editTextPass.Text.ToString();
             var emailValidate = isValidEmail(inputEmail);
+            radioBtnAdmin = FindViewById<RadioButton>(Resource.Id.radio_admin);
+            radioBtnUser = FindViewById<RadioButton>(Resource.Id.radio_user);
             try
             {
                 //Password equal confirm_pass ---editTextEmail.Text !="" && editTextPass.Text !="" && editTextPass.Text == editTextConfirmPass.Text
@@ -87,6 +103,16 @@ namespace FinalProject
                     LoginTable tbl = new LoginTable();
                     tbl.email = editTextEmail.Text;
                     tbl.password = editTextPass.Text;
+
+                    //ROLES***************************************************
+
+                    //Add roles
+                    if (radioBtnAdmin.Checked)
+                        tbl.role = "ADMIN";
+                    else if (radioBtnUser.Checked)
+                        tbl.role = "USER";
+                   
+                      
                     //TODO WHAT??    Xứ lý ràng buộc unique email 
                     //var SQL = db.Query<LoginTable>("SELECT * from users where email=editTextEmail.Text"); failed
 
@@ -122,5 +148,15 @@ namespace FinalProject
             return validPass.IsMatch(pass);
         }
 
+        //ROLES***************************************************
+
+        public void RadioButton_Click(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+            Toast.MakeText(this, "Your role is  "+rb.Text , ToastLength.Short).Show();
+        }
+
+        
+            
     }
 }
